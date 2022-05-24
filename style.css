@@ -11,6 +11,8 @@ body {
 
 
 
+
+
 .wrapper {
     display: flex;
     justify-content: center;
@@ -30,9 +32,20 @@ body {
     /*border: solid 1px blue;*/
 }
 
+#myCanvas {
+  
+  position: absolute;
+  /*width: 500px;
+  height: 500px;*/
+  z-index: 200;
+  left: 0;
+  top: 0;
+  border: solid thin black;
+  background-color: rgba(250, 235, 215, 0.794);
+}
+
 .score {
-    display: flex;
-    align-items: center;
+  position: absolute;
     width: 100%;
     position: fixed;
     left: 10px;

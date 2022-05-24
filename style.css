@@ -37,15 +37,18 @@ body {
   position: absolute;
   /*width: 500px;
   height: 500px;*/
+  margin-top: .5em;
   z-index: 200;
   left: 0;
   top: 0;
-  border: solid thin black;
-  background-color: rgba(250, 235, 215, 0.794);
+  border-left: dotted 2px rgb(255, 255, 255);
+  background-color: #1C6EA4;
+  -webkit-box-shadow: 5px 5px 6px -3px rgba(82,82,82,0.97); 
+  box-shadow: 5px 5px 6px -3px rgba(82,82,82,0.97);
 }
 
 .score {
-  position: absolute;
+    position: absolute;
     width: 100%;
     position: fixed;
     left: 10px;
@@ -62,6 +65,18 @@ body {
     color: rgb(106, 100, 100);
 }
 
+.config {
+  width: 15em;
+  height: 8em;
+  background-color: #dedede;
+  position: absolute;
+  margin-top: .5em;
+  padding: 0 0 0 10px;
+  right: 5px;
+  top: 0;
+  border: solid thin black;
+}
+
 
 svg {
     width: 80vw !important;
@@ -75,9 +90,20 @@ svg .poltrona {
     fill: #383428;
 }
 
-.ativa {
+.on {
     transition: fill .6s ease;
     fill: #ff0000d1 !important;
+}
+
+.acessibilidade {
+  transition: fill .6s ease;
+  fill: #0c45e2d1 !important;
+}
+
+
+.estudante {
+  transition: fill .6s ease;
+  fill: #e27b0cd1 !important;
 }
 
 .modal {

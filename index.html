@@ -13,6 +13,17 @@
     <div class="wrapper">
       <div class="container">
         <canvas id="myCanvas"></canvas>
+        <section class="config">
+          <form action="/action_page.php">
+            <p>Tipo de assento:</p>
+            <input type="radio" id="inteira" name="escolha" value="1" checked  onchange="getValue(this)">
+            <label for="inteira">Inteira</label><br>
+            <input type="radio" id="acessibilidade" name="escolha" value="2" onchange="getValue(this)">
+            <label for="acessibilidade">Acessibilidade</label><br>
+            <input type="radio" id="estudante" name="escolha" value="3" onchange="getValue(this)">
+            <label for="estudante">Estudante</label>
+          </form>
+        </section>
           <div class="score"><h3>LOTAÇÃO: <span class="capacidade"></span></h3></div>
           <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1" height="11" viewBox="0 0 399.96 264.71">
             <defs>

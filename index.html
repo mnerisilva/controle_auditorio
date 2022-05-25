@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Imagem interativa</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="style.css">
@@ -13,16 +15,28 @@
     <div class="wrapper">
       <div class="container">
         <canvas id="myCanvas"></canvas>
-        <section class="config">
+        <div class="config card" style="width: 18rem;">          
+          <div class="card-header">Tipos de assentos</div>
+          <div class="card-body">
           <form action="/action_page.php">
-            <p>Tipo de assento:</p>
-            <input type="radio" id="inteira" name="escolha" value="1" checked  onchange="getValue(this)">
-            <label for="inteira">Inteira</label><br>
-            <input type="radio" id="acessibilidade" name="escolha" value="2" onchange="getValue(this)">
-            <label for="acessibilidade">Acessibilidade</label><br>
-            <input type="radio" id="estudante" name="escolha" value="3" onchange="getValue(this)">
-            <label for="estudante">Estudante</label>
+            <div class="item" >
+              <input type="radio" id="inteira" name="escolha" value="1" checked  onchange="getValue(this)">
+              <label for="inteira">Inteira</label><br>
+          </div>
+          <div class="item" >
+              <input type="radio" id="acessibilidade" name="escolha" value="2" onchange="getValue(this)">
+              <label for="acessibilidade">Acessibilidade</label><br>
+          </div>
+          <div class="item" >
+              <input type="radio" id="estudante" name="escolha" value="3" onchange="getValue(this)">
+              <label for="estudante">Estudante</label>
+          </div>
           </form>
+        </div>
+        </div>
+        <section class="zoom-container">
+          <div class="zoom-button zoom-button-mais btn btn-default">+</div>
+          <div class="zoom-button zoom-button-menos btn btn-default">-</div>
         </section>
           <div class="score"><h3>LOTAÇÃO: <span class="capacidade"></span></h3></div>
           <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1" height="11" viewBox="0 0 399.96 264.71">
@@ -9173,6 +9187,8 @@
           <div class="modal"></div>
       </div>          
     </div>
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

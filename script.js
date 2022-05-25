@@ -2,6 +2,9 @@ const _poltrona = document.querySelectorAll('.poltrona');
 
 const _capacidade = document.querySelector('.capacidade');
 
+const _zoom_button_mais = document.querySelector(".zoom-button-mais");
+const _zoom_button_menos = document.querySelector(".zoom-button-menos");
+
 let _cap = 0;
 console.log(_poltrona);
 
@@ -17,11 +20,21 @@ console.log(_svg.getAttribute('width'));
 
 let _tipo = 1;
 
+_zoom_button_mais.addEventListener("click", function(){
+    console.log('clicou no zoom');
+    _svg.classList.add("zoom-mais");
+})
+
+_zoom_button_menos.addEventListener("click", function(){
+    console.log('clicou no zoom');
+    _svg.classList.remove("zoom-mais");
+})
+
 const _canvas = document.querySelector("#myCanvas");
 
 const ctx = _canvas.getContext("2d");
-_canvas.width = "190";
-_canvas.height = "60";
+_canvas.width = "300";
+_canvas.height = "80";
 
 _width = _canvas.width;
 _height = _canvas.height;
@@ -34,7 +47,9 @@ ctx.stroke();*/
 
 ctx.fillStyle = "white";
 ctx.font = '20px serif';     
-ctx.fillText("LOTAÇÃO: ", 10, 30);
+ctx.fillText("CAPACIDADE:       ", 10, 30);
+ctx.fillText("LOTAÇÃO ATUAL:    ", 10, 60);
+ctx.fillText("39    ", 210, 30);
 
 
 function getValue(radio) {
@@ -86,10 +101,12 @@ _poltrona.forEach((conteudo, item) => {
             console.log(e.offsetLeft, e.pageY);
             _modal.style.pageX = _body.pageX;
             _modal.style.pageY = _body.pageY;
-            _modal.style.display = "block";         
-            ctx.fillText("LOTAÇÃO: ", 10, 30);
+            _modal.style.display = "block";    
+            ctx.fillText("CAPACIDADE:       ", 10, 30);
+            ctx.fillText("39    ", 210, 30);        
+            ctx.fillText("LOTAÇÃO ATUAL: ", 10, 60);
             ctx.font = '26px serif'; 
-            ctx.fillText(_cap, 150, 30);
+            ctx.fillText(_cap, 210, 60);
             ctx.font = '20px serif'; 
 
         }

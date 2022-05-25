@@ -32,8 +32,7 @@ body {
     /*border: solid 1px blue;*/
 }
 
-#myCanvas {
-  
+#myCanvas {  
   position: absolute;
   /*width: 500px;
   height: 500px;*/
@@ -46,6 +45,7 @@ body {
   -webkit-box-shadow: 5px 5px 6px -3px rgba(82,82,82,0.97); 
   box-shadow: 5px 5px 6px -3px rgba(82,82,82,0.97);
 }
+
 
 .score {
     position: absolute;
@@ -65,16 +65,53 @@ body {
     color: rgb(106, 100, 100);
 }
 
-.config {
+.config {/*
   width: 15em;
   height: 8em;
-  background-color: #dedede;
+  background-color: #dedede;*/
   position: absolute;
   margin-top: .5em;
-  padding: 0 0 0 10px;
-  right: 5px;
+  /*padding: 0 0 0 10px;*/
+  right: 2em;
   top: 0;
   border: solid thin black;
+  z-index: 100;
+}
+
+.item:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.zoom-container {
+  position: absolute;
+  right: 1px;
+  top: .5em;
+  z-index: 100;
+}
+
+.zoom-container .zoom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 1.2em;
+  background-color: #ccc;
+}
+
+.zoom-container .zoom-button:hover {
+  cursor: pointer;
+}
+
+.zoom-mais {
+  transition: all 1.5s ease;
+  transform: scale(2.5);
+}
+
+.zoom-menos {
+  transition: all 1.5s ease;
+  transform: scale(1);
 }
 
 
@@ -82,6 +119,7 @@ svg {
     width: 80vw !important;
     height: 100vh !important;
     /*border: solid thin red;*/
+    z-index: 1;
 }
 
 svg .poltrona {

@@ -6,6 +6,7 @@ const _zoom_button_mais = document.querySelector(".zoom-button-mais");
 const _zoom_button_menos = document.querySelector(".zoom-button-menos");
 
 let _cap = 0;
+let _positiorX = 230;
 console.log(_poltrona);
 
 _capacidade.textContent = _cap;
@@ -47,9 +48,9 @@ ctx.stroke();*/
 
 ctx.fillStyle = "white";
 ctx.font = '20px serif';     
-ctx.fillText("CAPACIDADE:       ", 10, 30);
-ctx.fillText("LOTAÇÃO ATUAL:    ", 10, 60);
-ctx.fillText("39    ", 210, 30);
+ctx.fillText("CAPACIDADE:       ", 20, 30);
+ctx.fillText("LOTAÇÃO ATUAL:    ", 20, 60);
+ctx.fillText("39    ", 220, 30);
 
 
 function getValue(radio) {
@@ -102,11 +103,12 @@ _poltrona.forEach((conteudo, item) => {
             _modal.style.pageX = _body.pageX;
             _modal.style.pageY = _body.pageY;
             _modal.style.display = "block";    
-            ctx.fillText("CAPACIDADE:       ", 10, 30);
-            ctx.fillText("39    ", 210, 30);        
-            ctx.fillText("LOTAÇÃO ATUAL: ", 10, 60);
-            ctx.font = '26px serif'; 
-            ctx.fillText(_cap, 210, 60);
+            ctx.fillText("CAPACIDADE:       ", 20, 30);
+            ctx.fillText("39    ", 220, 30);        
+            ctx.fillText("LOTAÇÃO ATUAL: ", 20, 60);
+            ctx.font = '26px serif';
+            if(_cap.toString().length > 1){_positiorX = 210} 
+            ctx.fillText(_cap, _positiorX, 60);
             ctx.font = '20px serif'; 
 
         }

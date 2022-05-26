@@ -64,10 +64,10 @@ table .num-format {
 }
 
 .table .cap-atu span {
-  color: white;
+  color: black;
   width: 100%;
   border: solid 1px black;
-  background-color: red;
+  /*background-color: red;*/
   padding: 1px 4px 1px 4px;
 }
 

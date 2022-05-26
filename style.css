@@ -34,7 +34,7 @@ body {
     /*border: solid 1px blue;*/
 }
 
-#myCanvas {  
+.myCanvas {  
   position: absolute;
   /*width: 500px;
   height: 500px;*/
@@ -43,16 +43,35 @@ body {
   left: 0;
   top: 0;
   border-left: dotted 2px rgb(255, 255, 255);
-  background-color: #1C6EA4;
-  background-color: #183153;
+  /*background-color: #1C6EA4;
+  background-color: #183153;*/
   -webkit-box-shadow: 5px 5px 6px -3px rgba(82,82,82,0.97); 
   box-shadow: 5px 5px 6px -3px rgba(82,82,82,0.97);
+  background-color: white;
+}
+
+.myCanvas {
+  z-index: 200;
+}
+
+table .num-format {
+  text-align: right;
+}
+
+.table .cap-tot {
+  font-weight: 600;
 }
 
 .card {
   box-shadow: 0px 3px 3px 1px rgb(205 199 199 / 96%);
+  box-shadow: 5px 5px 6px -3px rgb(82 82 82 / 97%);
+}
+
+
   border-color: #ccc !important;
 }
+
+
 
 .card-header:first-child {
   background-color: #e5e9ec;
@@ -72,6 +91,10 @@ body {
   border-bottom-left-radius: 6px;
   background-color: #ffd43b;
   /*box-shadow: 1px 1px 2px -1px rgba(5, 5, 5, 0.97);*/
+}
+
+.tb-fundo {
+  background-color: white;
 }
 
 form input {

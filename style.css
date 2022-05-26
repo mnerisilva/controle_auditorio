@@ -166,7 +166,7 @@ svg {
     height: 100vh !important;
     /*border: solid thin red;*/
     transition: transform 1.5s ease;
-    transform: scale(1);
+    transform: scale(.9);
     z-index: 1;
 }
 
@@ -177,6 +177,7 @@ svg .poltrona {
 }
 
 .on {
+  opacity: 1;
 }
 
 .inteira {
@@ -194,6 +195,8 @@ svg .poltrona {
   transition: fill .6s ease;
   fill: #e27b0cd1 !important;
 }
+
+
 
 .modal {
   display: none;
@@ -241,4 +244,8 @@ svg .poltrona {
   height: 10px;
   background-color: rgb(207, 97, 14);
   left: 245px;
+}
+
+.green {
+  fill: green !important;
 }

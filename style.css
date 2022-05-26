@@ -50,7 +50,7 @@ body {
 }
 
 .card {
-  box-shadow: 5px 5px 6px -3px rgba(138, 137, 137, 0.97);
+  box-shadow: 3px 5px 5px 1px rgb(138 137 137 / 96%);
   border-color: #ccc !important;
 }
 
@@ -115,7 +115,7 @@ form input[type=radio]:checked {
 }
 
 .item {
-  font-size: 1.4em;
+  font-size: 1.1em;
 }
 
 .item:hover {

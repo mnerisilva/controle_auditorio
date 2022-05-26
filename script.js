@@ -17,11 +17,18 @@ arrIdPoltronas.map((item, index) => {
     }, 800);
 })
 
-let _cap = 0;
+let _lotAtual = 0;
+
+let _ace = 0;
+let _cor = 0;
+let _dis = 0;
+let _int = 0;
+let _mei = 0;
+
 let _positiorX = 230;
 console.log(_poltrona);
 
-_capacidade.textContent = _cap;
+_capacidade.textContent = _lotAtual;
 
 const _body = document.querySelector('body');
 const _modal = document.querySelector('.modal');
@@ -47,7 +54,7 @@ const _canvas = document.querySelector("#myCanvas");
 
 const ctx = _canvas.getContext("2d");
 _canvas.width = "300";
-_canvas.height = "80";
+_canvas.height = "240";
 
 _width = _canvas.width;
 _height = _canvas.height;
@@ -60,9 +67,14 @@ ctx.stroke();*/
 
 ctx.fillStyle = "white";
 ctx.font = '20px serif';     
-ctx.fillText("CAPACIDADE:       ", 20, 30);
-ctx.fillText("LOTAÇÃO ATUAL:    ", 20, 60);
-ctx.fillText("39    ", 220, 30);
+ctx.fillText("CAPACIDADE TOTAL:", 20, 30);
+ctx.fillText("LOTAÇÃO ATUAL:", 20, 60);
+ctx.fillText("39", 240, 30);  
+ctx.fillText("ACESSIBILIDADE:", 20, 93);
+ctx.fillText("DISTANCIAMENTO:", 20, 123);
+ctx.fillText("CORTESIA:", 20, 150);
+ctx.fillText("INTEIRA:", 20, 178);
+ctx.fillText("MEIA ENTRADA:", 20, 204);
 
 
 function getValue(radio) {
@@ -90,44 +102,65 @@ _poltrona.forEach((conteudo, item) => {
         if(e.buttons === 1){ // somente qdo for clicado o botão esquerdo do mouse
             e.target.classList.toggle("on")
 
-            //if(_tipo == 1){e.target.classList.add("")}
+            
             console.log(_tipo);
 
             ctx.clearRect(0,0,600,600); 
             console.log(_width, _height);
         
             if(elemento.classList.contains('on')){
-                if(_tipo == 1){e.target.classList.add('inteira');}
-                if(_tipo == 2){e.target.classList.add('acessibilidade');}
-                if(_tipo == 3){e.target.classList.add('estudante');}
+                if(_tipo == 1){e.target.classList.add('inteira'); _int++; console.log(_int)}
+                if(_tipo == 2){e.target.classList.add('acessibilidade'); _ace++}
+                if(_tipo == 3){e.target.classList.add('estudante'); _est++}
                 console.log('sim')
-                _cap++
+                _lotAtual++
             }else if(!elemento.classList.contains('on')){
-                e.target.classList.remove('inteira');
-                e.target.classList.remove('acessibilidade');
-                e.target.classList.remove('estudante');                
+                if(_tipo === 1){
+                    e.target.classList.remove('inteira');
+                    e.target.classList.remove('acessibilidade');
+                    e.target.classList.remove('estudante');
+                    _int--;
+                } else if(_tipo === 2){
+                    e.target.classList.remove('inteira');
+                    e.target.classList.remove('acessibilidade');
+                    e.target.classList.remove('estudante');
+                    _ace--;
+                } else if(_tipo === 3){
+                    e.target.classList.remove('inteira');
+                    e.target.classList.remove('acessibilidade');
+                    e.target.classList.remove('estudante');
+                    _est--;
+                }               
                 console.log('não')
-                _cap--
+                _lotAtual--
             }
                 
-            _capacidade.textContent = _cap;
+            _capacidade.textContent = _lotAtual;
         
             console.log(elemento);
-            //console.log(e.pageX, e.pageY);
             console.log(e.pageX, e.pageY);
             console.log(e.offsetLeft, e.pageY);
             _modal.style.pageX = _body.pageX;
             _modal.style.pageY = _body.pageY;
             _modal.style.display = "block";    
-            ctx.fillText("CAPACIDADE:       ", 20, 30);
-            ctx.fillText("39    ", 220, 30);        
+            ctx.fillText("CAPACIDADE TOTAL:       ", 20, 30);
+            ctx.fillText("39    ", 240, 30);        
             ctx.fillText("LOTAÇÃO ATUAL: ", 20, 60);
             ctx.font = '26px serif';
-            if(_cap.toString().length > 1){_positiorX = 210} 
-            ctx.fillText(_cap, _positiorX, 60);
+            if(_lotAtual.toString().length > 1){_positiorX = 210} 
+            ctx.fillText(_lotAtual, _positiorX, 60);
             ctx.font = '20px serif'; 
+            ctx.fillText("ACESSIBILIDADE:", 20, 93);
+            ctx.fillText(_ace, 240, 93);      
+            ctx.fillText("DISTANCIAMENTO:", 20, 123);
+            ctx.fillText("CORTESIA:", 20, 150);
+            ctx.fillText("INTEIRA:", 20, 178);
+            ctx.fillText(_int, 240, 178);        
+            ctx.fillText("MEIA ENTRADA:", 20, 204);
 
         }
     })
 
 });
+
+

@@ -177,8 +177,11 @@ svg .poltrona {
 }
 
 .on {
-    transition: fill .6s ease;
-    fill: #ff0000d1 !important;
+}
+
+.inteira {
+  transition: fill .6s ease;
+  fill: #ff0000d1 !important;
 }
 
 .acessibilidade {

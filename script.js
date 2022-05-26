@@ -79,17 +79,21 @@ _poltrona.forEach((conteudo, item) => {
             e.target.classList.toggle("on")
 
             //if(_tipo == 1){e.target.classList.add("")}
-            if(_tipo == 2){e.target.classList.add('acessibilidade');}
-            if(_tipo == 3){e.target.classList.add('estudante');}
             console.log(_tipo);
 
             ctx.clearRect(0,0,600,600); 
             console.log(_width, _height);
         
             if(elemento.classList.contains('on')){
+                if(_tipo == 1){e.target.classList.add('inteira');}
+                if(_tipo == 2){e.target.classList.add('acessibilidade');}
+                if(_tipo == 3){e.target.classList.add('estudante');}
                 console.log('sim')
                 _cap++
-            }else {
+            }else if(!elemento.classList.contains('on')){
+                e.target.classList.remove('inteira');
+                e.target.classList.remove('acessibilidade');
+                e.target.classList.remove('estudante');                
                 console.log('não')
                 _cap--
             }

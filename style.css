@@ -50,7 +50,7 @@ body {
 }
 
 .card {
-  box-shadow: 3px 5px 5px 1px rgb(138 137 137 / 96%);
+  box-shadow: 0px 3px 3px 1px rgb(205 199 199 / 96%);
   border-color: #ccc !important;
 }
 

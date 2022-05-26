@@ -8,6 +8,7 @@ body {
     box-sizing: border-box;
     font-family: 'Asap Condensed', sans-serif;
     background-color: #183153;
+    font-family: 'Asap Condensed', sans-serif;
 }
 
 
@@ -62,27 +63,39 @@ table .num-format {
   font-weight: 600;
 }
 
+.table .cap-atu span {
+  color: white;
+  width: 100%;
+  border: solid 1px black;
+  background-color: red;
+  padding: 1px 4px 1px 4px;
+}
+
 .card {
   box-shadow: 0px 3px 3px 1px rgb(205 199 199 / 96%);
   box-shadow: 5px 5px 6px -3px rgb(82 82 82 / 97%);
+  font-family: 'Asap Condensed', sans-serif;
+  border-radius: 0;
+  border-left: white !important;
+  border-top: white !important;
+  border-color: white;
 }
 
-
-  border-color: #ccc !important;
-}
 
 
 
 .card-header:first-child {
   background-color: #e5e9ec;
-  color: #183153;
+  background-color: white;
+  color: #000;
   font-weight: 600;
-  font-size: 1.4em;
+  font-size: 1em;
+  border-bottom: solid 2px black;
 }
 
 .card-header:first-child::before {
   position: absolute;
-  content: '';
+  /*content: '';*/
   width: 8px;
   height: 8px;
   left: 1px;
@@ -135,10 +148,11 @@ form input[type=radio]:checked {
   top: 0;
   border: solid thin black;
   z-index: 100;
+  border-radius: none;
 }
 
 .item {
-  font-size: 1.1em;
+  font-size: 1em;
 }
 
 .item:hover {

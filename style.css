@@ -66,10 +66,29 @@ table .num-format {
 .table .cap-atu span {
   color: black;
   width: 100%;
-  border: solid 1px black;
+  border-bottom: solid 1px black;
   /*background-color: red;*/
-  padding: 1px 4px 1px 4px;
+  /*padding: 1px 4px 1px 4px;*/
 }
+
+table tbody tr td:nth-child(4) {
+  text-align: center;
+  color: rgb(3, 14, 61) !important;
+}
+
+table tr td:nth-child(5) {
+  width: 5em;
+  text-align: right;
+}
+
+table tr td:nth-child(2) {
+  border-right: transparent;
+}
+
+table tr td {
+  border-right-width: 1px;
+}
+
 
 .card {
   box-shadow: 0px 3px 3px 1px rgb(205 199 199 / 96%);
@@ -79,6 +98,7 @@ table .num-format {
   border-left: white !important;
   border-top: white !important;
   border-color: white;
+  margin-right: .2em;
 }
 
 

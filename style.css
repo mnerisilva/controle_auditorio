@@ -258,6 +258,16 @@ svg .poltrona {
   fill: #e27b0cd1 !important;
 }
 
+.fade-in {
+  transition: all .5s ease;
+  opacity: 0;
+}
+
+.fade-out {
+  transition: all .5s ease;
+  opacity: 1;
+}
+
 
 
 .modal {

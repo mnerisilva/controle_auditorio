@@ -321,3 +321,14 @@ svg .poltrona {
 .green {
   fill: green !important;
 }
+
+table tbody th img {
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+}
+
+.mostra-spinner {
+  transition: opacity .5s ease;
+  opacity: 1;
+}

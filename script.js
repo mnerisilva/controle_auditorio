@@ -1,6 +1,8 @@
 
 const _container = document.querySelector('.container');
 
+const _img_lotacao = document.querySelector('.img-lotacao img');
+
 
 
 
@@ -172,6 +174,10 @@ _poltrona.forEach((conteudo, item) => {
             }
                 
             _capacidade.textContent = _lotAtual;
+            _img_lotacao.classList.add('mostra-spinner');
+            setTimeout(function(){
+                _img_lotacao.classList.remove('mostra-spinner');                
+            },800);
         
             console.log(elemento);
             console.log(e.pageX, e.pageY);

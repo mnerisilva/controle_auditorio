@@ -11,8 +11,11 @@ const _capacidade_total = document.querySelector('table .cap-tot');
 const _capacidade_atual = document.querySelector('table .cap-atu span');
 const _percentual_lotAtual = document.querySelector('table .perc-lotacao');
 const _percentual_acessi = document.querySelector('table .perc-acessi .percentual-acessi');
-const _cont_inteira = document.querySelector('table .cont-inteira span');
+const _percentual_distan = document.querySelector('table .percentual-distan');
+const _percentual_inteira = document.querySelector('table .percentual-inteira');
+const _cont_inteira = document.querySelector('table .cont-inteira');
 const _cont_acessi = document.querySelector('table .cont-acessi');
+const _cont_distan = document.querySelector('table .cont-distan');
 
 const arrIdPoltronas = [,"costas_p01", "costas_p02", "costas_p03", "costas_p04", "costas_p05", "costas_p06", "costas_p07", "costas_p08", "costas_p09", "costas_p10", "costas_p11", "costas_p12", "costas_p13", "costas_p14", "costas_p15", "costas_p16", "costas_p17", "costas_p18", "costas_p19", "costas_p20", "costas_p21", "costas_p22", "costas_p23", "costas_p24", "costas_p25", "costas_p26", "costas_p27", "costas_p28", "costas_p29", "costas_p30", "costas_p31", "costas_p32", "costas_p33", "costas_p34", "costas_p35", "costas_p36", "costas_p37", "costas_p38", "costas_p39"];
 
@@ -97,6 +100,7 @@ function getValue(radio) {
     if(radio.value === "1"){_tipo = 1}
     if(radio.value === "2"){_tipo = 2}
     if(radio.value === "3"){_tipo = 3}
+    if(radio.value === "4"){_tipo = 4}
 }
 
 
@@ -127,6 +131,7 @@ _poltrona.forEach((conteudo, item) => {
                 if(_tipo == 1){e.target.classList.add('inteira'); _int++; console.log(_int)}
                 if(_tipo == 2){e.target.classList.add('acessibilidade'); _ace++}
                 if(_tipo == 3){e.target.classList.add('estudante'); _est++}
+                if(_tipo == 4){e.target.classList.add('distanciamento'); _dis++}
                 console.log('sim')
                 _lotAtual++
             }else /*if(!elemento.classList.contains('on'))*/{
@@ -134,17 +139,26 @@ _poltrona.forEach((conteudo, item) => {
                     e.target.classList.remove('inteira');
                     e.target.classList.remove('acessibilidade');
                     e.target.classList.remove('estudante');
+                    e.target.classList.remove('distanciamento');
                     _int--;
                 } else if(_tipo === 2){
                     e.target.classList.remove('inteira');
                     e.target.classList.remove('acessibilidade');
                     e.target.classList.remove('estudante');
+                    e.target.classList.remove('distanciamento');
                     _ace--;
                 } else if(_tipo === 3){
                     e.target.classList.remove('inteira');
                     e.target.classList.remove('acessibilidade');
                     e.target.classList.remove('estudante');
+                    e.target.classList.remove('distanciamento');
                     _est--;
+                } else if(_tipo === 4){
+                    e.target.classList.remove('inteira');
+                    e.target.classList.remove('acessibilidade');
+                    e.target.classList.remove('estudante');
+                    e.target.classList.remove('distanciamento');
+                    _dis--;
                 }               
                 console.log('não')
                 _lotAtual--
@@ -175,9 +189,12 @@ _poltrona.forEach((conteudo, item) => {
             _capacidade_atual.textContent = _lotAtual;
             _cont_inteira.textContent = _int;
             _cont_acessi.textContent = _ace;
+            _cont_distan.textContent = _dis;
             //_percentual_lotAtual.textContent = `${perc_lotAtual}`;
             console.log('valores: '+_capTotal, _lotAtual);
             _percentual_acessi.textContent = `${Math.trunc((_ace*100) / _capTotal)}`;
+            _percentual_distan.textContent = `${Math.trunc((_dis*100) / _capTotal)}`;
+            _percentual_inteira.textContent = `${Math.trunc((_int*100) / _capTotal)}`;
             _percentual_lotAtual.textContent = `${Math.trunc((_lotAtual*100) / _capTotal)}`;
 
         }

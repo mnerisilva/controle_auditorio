@@ -242,6 +242,11 @@ svg .poltrona {
   fill: #ff0000d1 !important;
 }
 
+.distanciamento {
+  transition: fill .6s ease;
+  fill: #b411d5d1 !important;
+}
+
 .acessibilidade {
   transition: fill .6s ease;
   fill: #0c45e2d1 !important;

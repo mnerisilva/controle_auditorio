@@ -26,6 +26,8 @@ const _cont_inteira = document.querySelector('table .cont-inteira');
 const _cont_acessi = document.querySelector('table .cont-acessi');
 const _cont_distan = document.querySelector('table .cont-distan');
 
+const _descricao_lotacao = document.querySelector('.descricao-lotacao');
+
 const arrIdPoltronas = [,"costas_p01", "costas_p02", "costas_p03", "costas_p04", "costas_p05", "costas_p06", "costas_p07", "costas_p08", "costas_p09", "costas_p10", "costas_p11", "costas_p12", "costas_p13", "costas_p14", "costas_p15", "costas_p16", "costas_p17", "costas_p18", "costas_p19", "costas_p20", "costas_p21", "costas_p22", "costas_p23", "costas_p24", "costas_p25", "costas_p26", "costas_p27", "costas_p28", "costas_p29", "costas_p30", "costas_p31", "costas_p32", "costas_p33", "costas_p34", "costas_p35", "costas_p36", "costas_p37", "costas_p38", "costas_p39"];
 
 arrIdPoltronas.map((item, index) => {
@@ -175,8 +177,14 @@ _poltrona.forEach((conteudo, item) => {
                 
             _capacidade.textContent = _lotAtual;
             _img_lotacao.classList.add('mostra-spinner');
+            _percentual_lotAtual.classList.add("negrito");
+            _capacidade_atual.classList.add("negrito");
+            //_descricao_lotacao.classList.add("negrito");
             setTimeout(function(){
-                _img_lotacao.classList.remove('mostra-spinner');                
+                _img_lotacao.classList.remove('mostra-spinner'); 
+                _percentual_lotAtual.classList.remove("negrito");
+                _capacidade_atual.classList.remove("negrito");
+                //_descricao_lotacao.classList.remove("negrito");
             },800);
         
             console.log(elemento);

@@ -332,3 +332,7 @@ table tbody th img {
   transition: opacity .5s ease;
   opacity: 1;
 }
+
+.negrito {
+  font-weight: bold;
+}

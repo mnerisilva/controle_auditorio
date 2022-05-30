@@ -10,6 +10,9 @@ const _myCanvas = document.querySelector(".myCanvas");
 const _capacidade_total = document.querySelector('table .cap-tot');
 const _capacidade_atual = document.querySelector('table .cap-atu span');
 const _percentual_lotAtual = document.querySelector('table .perc-lotacao');
+const _percentual_acessi = document.querySelector('table .perc-acessi .percentual-acessi');
+const _cont_inteira = document.querySelector('table .cont-inteira span');
+const _cont_acessi = document.querySelector('table .cont-acessi');
 
 const arrIdPoltronas = [,"costas_p01", "costas_p02", "costas_p03", "costas_p04", "costas_p05", "costas_p06", "costas_p07", "costas_p08", "costas_p09", "costas_p10", "costas_p11", "costas_p12", "costas_p13", "costas_p14", "costas_p15", "costas_p16", "costas_p17", "costas_p18", "costas_p19", "costas_p20", "costas_p21", "costas_p22", "costas_p23", "costas_p24", "costas_p25", "costas_p26", "costas_p27", "costas_p28", "costas_p29", "costas_p30", "costas_p31", "costas_p32", "costas_p33", "costas_p34", "costas_p35", "costas_p36", "costas_p37", "costas_p38", "costas_p39"];
 
@@ -126,7 +129,7 @@ _poltrona.forEach((conteudo, item) => {
                 if(_tipo == 3){e.target.classList.add('estudante'); _est++}
                 console.log('sim')
                 _lotAtual++
-            }else if(!elemento.classList.contains('on')){
+            }else /*if(!elemento.classList.contains('on'))*/{
                 if(_tipo === 1){
                     e.target.classList.remove('inteira');
                     e.target.classList.remove('acessibilidade');
@@ -170,8 +173,11 @@ _poltrona.forEach((conteudo, item) => {
             //ctx.fillText(_int, 240, 178);        
             //ctx.fillText("MEIA ENTRADA:", 20, 204);
             _capacidade_atual.textContent = _lotAtual;
+            _cont_inteira.textContent = _int;
+            _cont_acessi.textContent = _ace;
             //_percentual_lotAtual.textContent = `${perc_lotAtual}`;
             console.log('valores: '+_capTotal, _lotAtual);
+            _percentual_acessi.textContent = `${Math.trunc((_ace*100) / _capTotal)}`;
             _percentual_lotAtual.textContent = `${Math.trunc((_lotAtual*100) / _capTotal)}`;
 
         }

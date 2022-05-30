@@ -335,4 +335,9 @@ table tbody th img {
 
 .negrito {
   font-weight: bold;
+  color: darkgoldenrod !important;
+}
+
+.black {
+  color: darkgoldenrod;
 }

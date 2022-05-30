@@ -3,6 +3,8 @@ const _container = document.querySelector('.container');
 
 const _img_lotacao = document.querySelector('.img-lotacao img');
 
+const _lotacao_icon = document.querySelector(".lotacao-icon i");
+
 
 
 
@@ -179,12 +181,14 @@ _poltrona.forEach((conteudo, item) => {
             _img_lotacao.classList.add('mostra-spinner');
             _percentual_lotAtual.classList.add("negrito");
             _capacidade_atual.classList.add("negrito");
-            //_descricao_lotacao.classList.add("negrito");
+            _descricao_lotacao.classList.add("black");
+            _lotacao_icon.classList.add("black");
             setTimeout(function(){
                 _img_lotacao.classList.remove('mostra-spinner'); 
                 _percentual_lotAtual.classList.remove("negrito");
                 _capacidade_atual.classList.remove("negrito");
-                //_descricao_lotacao.classList.remove("negrito");
+                _descricao_lotacao.classList.remove("black");
+                _lotacao_icon.classList.remove("black");
             },800);
         
             console.log(elemento);

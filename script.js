@@ -1,3 +1,10 @@
+
+const _container = document.querySelector('.container');
+
+
+
+
+
 const _poltrona = document.querySelectorAll('.poltrona');
 
 const _capacidade = document.querySelector('.capacidade');

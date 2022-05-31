@@ -23,6 +23,7 @@ body {
     height: 80vh;
     /*border: solid thin black;*/
     background-color: #f0f1f3;
+    background-image: radial-gradient(650px circle at 100% 100%, #d8c5be, transparent 100%);
 }
 
 .container {

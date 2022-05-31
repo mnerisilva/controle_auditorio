@@ -41,7 +41,7 @@ body {
   height: 500px;*/
   margin-top: .5em;
   z-index: 200;
-  left: 0;
+  left: 1em;
   top: 0;
   border-left: dotted 2px rgb(255, 255, 255);
   /*background-color: #1C6EA4;
@@ -253,9 +253,15 @@ svg .poltrona {
 }
 
 
-.estudante {
+.meia {
   transition: fill .6s ease;
   fill: #e27b0cd1 !important;
+}
+
+
+.cortesia {
+  transition: fill .6s ease;
+  fill: #0ce2e2d1 !important;
 }
 
 .fade-in {

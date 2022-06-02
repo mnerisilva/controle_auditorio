@@ -1,5 +1,6 @@
-
 const _container = document.querySelector('.container');
+
+const _wrapper = document.querySelector('.wrapper');
 
 const _img_lotacao = document.querySelector('.img-lotacao img');
 
@@ -9,20 +10,45 @@ const _input_inteira = document.querySelector("#inteira");
 
 _input_inteira.setAttribute('checked', true);
 
-
-
-
-
 const _poltrona = document.querySelectorAll('.poltrona');
 
 const _capacidade = document.querySelector('.capacidade');
 
 const _zoom_button_mais = document.querySelector(".zoom-button-mais");
+
 const _zoom_button_menos = document.querySelector(".zoom-button-menos");
 
 const _myCanvas = document.querySelector(".myCanvas");
+
 const _config = document.querySelector(".config");
+
 const _svg = document.querySelector("svg");
+
+const _capacidade_total = document.querySelector('table .cap-tot');
+
+const _capacidade_atual = document.querySelector('table .cap-atu span');
+
+const _percentual_lotAtual = document.querySelector('table .perc-lotacao');
+
+const _percentual_acessi = document.querySelector('table .percentual-acessi');
+
+const _percentual_cortesia = document.querySelector('table .percentual-cortesia');
+
+const _percentual_distan = document.querySelector('table .percentual-distan');
+
+const _percentual_inteira = document.querySelector('table .percentual-inteira');
+
+const _percentual_meia = document.querySelector('table .percentual-meia');
+
+const _cont_inteira = document.querySelector('table .cont-inteira');
+
+const _cont_acessi = document.querySelector('table .cont-acessi');
+
+const _cont_cortesia = document.querySelector('table .cont-cortesia');
+
+const _cont_meia = document.querySelector('table .cont-meia');
+
+const _cont_distan = document.querySelector('table .cont-distan');
 
 setTimeout(function(){    
     _myCanvas.classList.add('fade-out');
@@ -36,26 +62,13 @@ setTimeout(function(){
     _svg.classList.add('fade-out');
 } , 1200);
 
-const _capacidade_total = document.querySelector('table .cap-tot');
-const _capacidade_atual = document.querySelector('table .cap-atu span');
-const _percentual_lotAtual = document.querySelector('table .perc-lotacao');
-const _percentual_acessi = document.querySelector('table .percentual-acessi');
-const _percentual_cortesia = document.querySelector('table .percentual-cortesia');
-const _percentual_distan = document.querySelector('table .percentual-distan');
-const _percentual_inteira = document.querySelector('table .percentual-inteira');
-const _percentual_meia = document.querySelector('table .percentual-meia');
-const _cont_inteira = document.querySelector('table .cont-inteira');
-const _cont_acessi = document.querySelector('table .cont-acessi');
-const _cont_cortesia = document.querySelector('table .cont-cortesia');
-const _cont_meia = document.querySelector('table .cont-meia');
-const _cont_distan = document.querySelector('table .cont-distan');
+
 
 const _descricao_lotacao = document.querySelector('.descricao-lotacao');
 
 const arrIdPoltronas = [,"costas_p01", "costas_p02", "costas_p03", "costas_p04", "costas_p05", "costas_p06", "costas_p07", "costas_p08", "costas_p09", "costas_p10", "costas_p11", "costas_p12", "costas_p13", "costas_p14", "costas_p15", "costas_p16", "costas_p17", "costas_p18", "costas_p19", "costas_p20", "costas_p21", "costas_p22", "costas_p23", "costas_p24", "costas_p25", "costas_p26", "costas_p27", "costas_p28", "costas_p29", "costas_p30", "costas_p31", "costas_p32", "costas_p33", "costas_p34", "costas_p35", "costas_p36", "costas_p37", "costas_p38", "costas_p39"];
 
 arrIdPoltronas.map((item, index) => {
-    //console.log(index, item);
     let id = '#'+item;
         let __poltrona = document.querySelector(id);
         __poltrona.classList.add("green");
@@ -78,7 +91,6 @@ let _int = 0;
 let _mei = 0;
 
 let _positiorX = 230;
-//console.log(_poltrona);
 
 _capacidade.textContent = _lotAtual;
 
@@ -86,8 +98,6 @@ const _body = document.querySelector('body');
 const _modal = document.querySelector('.modal');
 const _score = document.querySelector('.score');
 _score.style.display = "none";
-//console.log(_svg);
-//console.log(_svg.getAttribute('width'));
 
 let _tipo = 1;
 
@@ -104,31 +114,6 @@ _zoom_button_menos.addEventListener("click", function(){
 
 const _canvas = document.querySelector("#myCanvas");
 
-/*const ctx = _canvas.getContext("2d");
-_canvas.width = "300";
-_canvas.height = "240";*/
-
-/*_width = _canvas.width;
-_height = _canvas.height;*/
-
-/*ctx.beginPath();
-ctx.strokeStyle = 'green';
-ctx.moveTo(20, 20);
-ctx.lineTo(200, 20);
-ctx.stroke();*/
-
-/*ctx.fillStyle = "white";
-ctx.font = '20px serif';     
-ctx.fillText("CAPACIDADE TOTAL:", 20, 30);
-ctx.fillText("LOTAÇÃO ATUAL:", 20, 60);
-ctx.fillText("39", 240, 30);  
-ctx.fillText("ACESSIBILIDADE:", 20, 93);
-ctx.fillText("DISTANCIAMENTO:", 20, 123);
-ctx.fillText("CORTESIA:", 20, 150);
-ctx.fillText("INTEIRA:", 20, 178);
-ctx.fillText("MEIA ENTRADA:", 20, 204);*/
-
-
 function getValue(radio) {
     console.log('ONCHANGE: '+radio.value);
     if(radio.value === "1"){_tipo = 1; radio.parentNode.style.backgroundColor = "antiquewhite"}
@@ -141,14 +126,13 @@ function getValue(radio) {
 
 
 // desabilita menu de contexto do elemento svg
-        _svg.addEventListener('contextmenu', e => {
+        _wrapper.addEventListener('contextmenu', e => {
         e.preventDefault();
         });
 //
 
 
 _poltrona.forEach((conteudo, item) => {
-    //console.log(conteudo, item)
 
     conteudo.addEventListener('mousedown', function(e){
         console.log(e.buttons);
@@ -158,9 +142,6 @@ _poltrona.forEach((conteudo, item) => {
 
             
             console.log(_tipo);
-
-            //ctx.clearRect(0,0,600,600); 
-            //console.log(_width, _height);
         
             if(elemento.classList.contains('on')){
                 if(_tipo === 1){e.target.classList.add('inteira'); _int++; console.log(_int)}
@@ -225,9 +206,6 @@ _poltrona.forEach((conteudo, item) => {
                 _lotacao_icon.classList.remove("black");
             },800);
         
-            //console.log(elemento);
-            //console.log(e.pageX, e.pageY);
-            //console.log(e.offsetLeft, e.pageY);
             _modal.style.pageX = _body.pageX;
             _modal.style.pageY = _body.pageY;
             _modal.style.display = "block";    
